@@ -49,14 +49,6 @@ class ServiceAccountCredentials {
     final identifier = json['client_id'] as String?;
     final privateKey = json['private_key'] as String?;
     final email = json['client_email'] as String?;
-    final type = json['type'];
-
-    if (type != 'service_account') {
-      throw ArgumentError(
-        'The given credentials are not of type '
-        'service_account (was: $type).',
-      );
-    }
 
     if (identifier == null || privateKey == null || email == null) {
       throw ArgumentError(
